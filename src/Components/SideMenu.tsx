@@ -8,16 +8,23 @@ interface SideMenuProps {
 }
 
 const SideMenu: React.FC<SideMenuProps> = ({ docPages, selectedPage, setSelectedPage }) => (
-    <div className="side-menu">
-        {docPages.map((page, index) => (
-            <div
-                key={index}
-                className={`menu-item ${selectedPage?.title === page.title ? "active" : ""}`}
-                onClick={() => setSelectedPage(page)}
-            >
-                {page.title}
-            </div>
-        ))}
+    <div>
+
+        <nav className="s-sidebar__nav" >
+            <ul>
+                {docPages.map((page, index) => (
+                    <li key={index}
+                        className={`${selectedPage?.title === page.title ? "active" : ""}`}
+                        onClick={() => setSelectedPage(page)}>
+                        <a className="s-sidebar__nav-link" href="#0">
+                            <em>{page.title}</em>
+                        </a>
+                    </li>
+
+                ))}
+            </ul>
+        </nav>
     </div>
+
 );
 export default SideMenu;

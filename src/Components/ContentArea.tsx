@@ -7,7 +7,7 @@ interface ContentAreaProps {
 }
 
 const ContentArea: React.FC<ContentAreaProps> = ({ selectedPage }) => (
-    <div className="content-area">
+    <div className="s-layout__content">
         <h2>{selectedPage?.title}</h2>
         <Markdown>{selectedPage?.bodyText || ""}</Markdown>
     </div>
